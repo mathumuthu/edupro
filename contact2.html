@@ -1,0 +1,570 @@
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<header class="header">
+
+<div class="top-bar">
+Welcome To Stackly School
+</div>
+
+<div class="nav-wrapper">
+
+<div class="logo-box">
+<img src="ChatGPT Image Feb 24, 2026, 07_21_33 AM.webp">
+<h3>STACKLY</h3>
+</div>
+
+<nav class="navbar">
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa fa-bars"></i>
+</div>
+
+<ul class="nav-links" id="nav-links">
+
+<li class="dropdown" id="homeDrop">
+<a href="#">Home</a>
+<ul class="dropdown-menu">
+<li><a href="index.html">Home 1</a></li>
+<!-- <li><a href="home2.html">Home 2</a></li> -->
+</ul>
+</li>
+
+<li><a href="course.html">Courses</a></li>
+<li><a href="prog.html">Programming</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact2.html">Contact</a></li>
+<li><a href="dash.html">Dashboard</a></li>
+
+</ul>
+
+<a href="login.html" class="apply-btn">Login</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="contact-section">
+
+<div class="contact-header">
+<h2>Contact </h2>
+<p>We are here to help you 24/7</p>
+</div>
+
+<div class="contact-wrapper">
+
+<!-- LEFT INFO -->
+<div class="contact-info">
+
+<div class="info-box">
+<i class="fa fa-phone"></i>
+<h4>Call Us</h4>
+<p>+91 9876543210</p>
+</div>
+
+<div class="info-box">
+<i class="fa fa-envelope"></i>
+<h4>Email</h4>
+<p>info@edupro.com</p>
+</div>
+
+<div class="info-box">
+<i class="fa fa-location-dot"></i>
+<h4>Address</h4>
+<p>Chennai, Tamil Nadu</p>
+</div>
+
+</div>
+
+<!-- RIGHT FORM -->
+<div class="contact-form">
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="text" placeholder="Subject">
+
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- MAP -->
+<div class="map">
+<iframe width="100%" height="100%" 
+src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+</div>
+
+</section>
+
+
+
+<footer class="edu-footer">
+
+<div class="footer-container">
+
+<div class="footer-col">
+<h2>EduPro College</h2>
+<p>
+Providing quality education with
+modern infrastructure and
+career-focused learning.
+</p>
+</div>
+<div class="course-social">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+<div class="footer-col">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Academics</a></li>
+<li><a href="#">Admissions</a></li>
+<li><a href="#">Campus Life</a></li>
+<li><a href="#">Events</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h3>Student Support</h3>
+<ul>
+<li><a href="#">Help Center</a></li>
+<li><a href="#">Fee Structure</a></li>
+<li><a href="#">Hostel</a></li>
+<li><a href="#">Placement</a></li>
+<li><a href="#">Transport</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h3>Contact Info</h3>
+<p>Email : info@edupro.edu</p>
+<p>Phone : +91 9876543210</p>
+<p>Location : Tamil Nadu</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 EduPro College. All Rights Reserved</p>
+</div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+<style>
+
+/* TOP BAR */
+.top-bar{
+background:#8a001d;
+color:#fff;
+padding:10px 5%;
+}
+
+/* WRAPPER */
+.nav-wrapper{
+display:flex;
+position:relative;
+}
+
+/* LOGO */
+.logo-box{
+background:#8a001d;
+color:#fff;
+padding:25px;
+text-align:center;
+clip-path:polygon(0 0,100% 0,100% 80%,50% 100%,0 80%);
+}
+
+.logo-box img{
+width:60px;
+margin-bottom:5px;
+}
+
+/* NAVBAR */
+.navbar{
+flex:1;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#fff;
+padding:15px 30px;
+position:relative;
+}
+
+/* NAV LINKS (VISIBLE IN DESKTOP ✅) */
+.nav-links{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.nav-links li{
+position:relative;
+}
+
+.nav-links li a{
+text-decoration:none;
+color:#000;
+}
+
+/* DESKTOP DROPDOWN */
+.dropdown-menu{
+display:none;
+position:absolute;
+top:35px;
+background:#fff;
+list-style:none;
+padding:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+/* APPLY */
+.apply-btn{
+background:#8a001d;
+color:#fff;
+padding:10px 25px;
+border-radius:30px;
+text-decoration:none;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+display:none;
+font-size:25px;
+cursor:pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.nav-wrapper{
+flex-direction:column;
+}
+
+.logo-box{
+clip-path:none;
+width:100%;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:25px;
+z-index:10001;
+}
+
+/* SLIDE MENU */
+.nav-links{
+position:fixed;
+top:0;
+left:-100%;
+width:75%;
+height:100vh;
+background:#fff;
+flex-direction:column;
+padding:80px 20px;
+transition:0.4s ease;
+z-index:9999;
+gap:20px;
+}
+
+.nav-links.active{
+left:0;
+}
+
+/* MOBILE DROPDOWN */
+.dropdown-menu{
+position:static;
+display:none;
+padding-left:10px;
+}
+
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+/* APPLY BTN */
+.apply-btn{
+display:none;
+}
+
+}
+
+.contact-section{
+padding:80px 5%;
+background:#f9f9f9;
+}
+
+.contact-header{
+text-align:center;
+margin-bottom:40px;
+}
+
+.contact-header h2{
+color:#8a001d;
+font-size:35px;
+}
+
+.contact-wrapper{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+}
+
+/* LEFT INFO */
+
+.contact-info{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.info-box{
+background:#fff;
+padding:25px;
+border-left:5px solid #8a001d;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.info-box i{
+color:#8a001d;
+font-size:25px;
+margin-bottom:10px;
+}
+
+/* FORM */
+
+.contact-form{
+flex:1;
+background:#fff;
+padding:30px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ccc;
+outline:none;
+}
+
+.contact-form button{
+background:#8a001d;
+color:#fff;
+padding:12px 25px;
+border:none;
+cursor:pointer;
+}
+
+/* MAP */
+
+.map{
+margin-top:40px;
+height:300px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.contact-wrapper{
+flex-direction:column;
+}
+
+}
+
+
+
+
+.edu-footer{
+background:#fff;
+color:#800000;
+padding:60px 8%;
+overflow:hidden;
+}
+
+.footer-container{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-col{
+flex:1;
+animation:fadeUp 1s ease;
+}
+
+.footer-col h3{
+margin-bottom:10px;
+}
+
+.footer-col ul{
+list-style:none;
+padding:0;
+}
+
+.footer-col ul li{
+margin:8px 0;
+}
+
+.footer-col ul li a{
+text-decoration:none;
+color:#800000;
+transition:.4s;
+}
+
+.footer-col ul li a:hover{
+padding-left:10px;
+color:#ff8c00;
+}
+
+/* Social Hover Glow */
+.footer-col i{
+margin-right:10px;
+cursor:pointer;
+transition:.4s;
+}
+
+.footer-col i:hover{
+transform:scale(1.3);
+color:#ff8c00;
+}
+
+/* Bottom Animation */
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+border-top:1px solid #ddd;
+padding-top:15px;
+animation:slideUp 2s infinite alternate;
+}
+
+@keyframes fadeUp{
+0%{transform:translateY(40px);opacity:0}
+100%{transform:translateY(0);opacity:1}
+}
+
+@keyframes slideUp{
+0%{transform:translateY(0)}
+100%{transform:translateY(-5px)}
+}
+
+@media(max-width:768px){
+.footer-container{
+flex-direction:column;
+}
+}
+
+
+
+.course-social{
+display:flex;
+justify-content:center;
+margin-top:15px;
+gap:10px;
+}
+
+.course-social a{
+width:35px;
+height:35px;
+line-height:35px;
+text-align:center;
+border-radius:50%;
+background:#800000;
+color:#fff;
+font-size:14px;
+transition:.5s;
+position:relative;
+overflow:hidden;
+}
+
+.course-social a:hover{
+background:#fff;
+color:#800000;
+border:1px solid #800000;
+transform:rotate(360deg) scale(1.2);
+box-shadow:0 0 15px #800000;
+}
+
+
+.course-social a{
+animation:floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-5px);}
+}
+
+
+
+
+
+
+
+</style>
+
+<script>
+
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+const dropdown = document.getElementById("homeDrop");
+
+// HAMBURGER CLICK
+toggle.onclick = () =>{
+nav.classList.toggle("active");
+}
+
+// MOBILE DROPDOWN
+dropdown.onclick = (e) =>{
+
+if(window.innerWidth <= 768){
+e.preventDefault();
+dropdown.classList.toggle("active");
+}
+
+}
+
+// CLOSE MENU OUTSIDE
+document.addEventListener("click",(e)=>{
+
+if(!toggle.contains(e.target) && !nav.contains(e.target)){
+nav.classList.remove("active");
+dropdown.classList.remove("active");
+}
+
+});
+
+</script>
