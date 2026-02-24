@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STACKLY EDU</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#2c2b34,#3c3a47);
+}
+
+.container{
+width:900px;
+height:520px;
+background:#fff;
+border-radius:20px;
+display:flex;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+.left{
+flex:1;
+background:#3c3a47;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.left img{
+width:60%;
+max-width:250px;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+.right{
+flex:1;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+padding:40px;
+}
+
+form{width:100%;display:none;}
+form.active{display:block;}
+
+input{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+background:#f1f1f1;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+background:#5b5bff;
+color:#fff;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+a{color:#5b5bff;text-decoration:none;cursor:pointer;}
+.toggle{margin-top:10px;font-size:13px;}
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.popup-box{
+background:#fff;
+padding:30px;
+border-radius:10px;
+position:relative;
+}
+
+.close{
+position:absolute;
+top:5px;
+right:10px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+.container{
+flex-direction:column;
+height:auto;
+width:90%;
+}
+.left{
+height:220px;
+padding:20px;
+}
+.left img{
+width:50%;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+</div>
+
+<div class="right">
+
+<!-- LOGIN -->
+<form id="loginForm" class="active" onsubmit="return loginUser()">
+<h2>Student Login</h2>
+<input type="text" id="loginId" placeholder="Student ID" required>
+<input type="password" id="loginPass" placeholder="Password" required>
+<button>Login</button>
+
+<p class="toggle">
+<a onclick="openForgot()">Forgot Password?</a>
+</p>
+
+<p class="toggle">
+Don't have account?
+<a onclick="showSignup()">Sign Up</a>
+</p>
+</form>
+
+<!-- SIGNUP -->
+<form id="signupForm" onsubmit="return registerUser()">
+<h2>Create Account</h2>
+<input type="text" id="sname" placeholder="Full Name" required>
+<input type="email" id="semail" placeholder="Email" required>
+<input type="text" id="sid" placeholder="Student ID" required>
+<input type="password" id="spass" placeholder="Password" required>
+<button>Register</button>
+
+<p class="toggle">
+Already have account?
+<a onclick="showLogin()">Login</a>
+</p>
+</form>
+
+</div>
+</div>
+
+<!-- FORGOT -->
+<div class="popup" id="forgotBox">
+<div class="popup-box">
+<span class="close" onclick="closeForgot()">X</span>
+<h3>Reset Password</h3>
+<input type="email" id="fmail" placeholder="Enter Email">
+<button onclick="resetPass()">Send Link</button>
+</div>
+</div>
+
+<script>
+
+// SAVE SIGNUP DATA
+function registerUser(){
+let name=document.getElementById("sname").value;
+let email=document.getElementById("semail").value;
+let id=document.getElementById("sid").value;
+let pass=document.getElementById("spass").value;
+
+localStorage.setItem("sid",id);
+localStorage.setItem("spass",pass);
+
+alert("Account Created Successfully");
+showLogin();
+return false;
+}
+
+// LOGIN CHECK
+function loginUser(){
+let id=document.getElementById("loginId").value;
+let pass=document.getElementById("loginPass").value;
+
+let savedId=localStorage.getItem("sid");
+let savedPass=localStorage.getItem("spass");
+
+if(id==savedId && pass==savedPass){
+alert("Login Success");
+}
+else{
+alert("welcome to stackly edu");
+}
+return false;
+}
+
+function showSignup(){
+document.getElementById("loginForm").classList.remove("active");
+document.getElementById("signupForm").classList.add("active");
+}
+
+function showLogin(){
+document.getElementById("signupForm").classList.remove("active");
+document.getElementById("loginForm").classList.add("active");
+}
+
+function openForgot(){
+document.getElementById("forgotBox").style.display="flex";
+}
+
+function closeForgot(){
+document.getElementById("forgotBox").style.display="none";
+}
+
+function resetPass(){
+alert("Reset Link Sent");
+closeForgot();
+}
+
+</script>
+
+</body>
+</html>
