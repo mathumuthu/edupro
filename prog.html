@@ -1,379 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programming - EduPro</title>
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+<header class="header">
 
-/* ================= HEADER ================= */
-
-.top-bar{
-background:#8a001d;
-color:#fff;
-padding:10px 5%;
-}
-
-.nav-wrapper{
-display:flex;
-position:relative;
-}
-
-.logo-box{
-background:#8a001d;
-color:#fff;
-padding:25px;
-text-align:center;
-clip-path:polygon(0 0,100% 0,100% 80%,50% 100%,0 80%);
-}
-
-.logo-box img{
-width:60px;
-margin-bottom:5px;
-}
-
-.navbar{
-flex:1;
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:#fff;
-padding:15px 30px;
-}
-
-.nav-links{
-display:flex;
-list-style:none;
-gap:30px;
-}
-
-.nav-links li{
-position:relative;
-}
-
-.nav-links li a{
-text-decoration:none;
-color:#000;
-}
-
-.dropdown-menu{
-display:none;
-position:absolute;
-top:35px;
-background:#fff;
-list-style:none;
-padding:10px;
-}
-
-.dropdown:hover .dropdown-menu{
-display:block;
-}
-
-.apply-btn{
-background:#8a001d;
-color:#fff;
-padding:10px 25px;
-border-radius:30px;
-text-decoration:none;
-}
-
-.menu-toggle{
-display:none;
-font-size:25px;
-cursor:pointer;
-}
-
-/* ================= HERO ================= */
-
-.prog-hero{
-height:60vh;
-background:#8a001d;
-color:#fff;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
-overflow:hidden;
-text-align:center;
-}
-
-.hero-slide{
-position:absolute;
-opacity:0;
-transition:1s;
-}
-
-.hero-slide.active{
-opacity:1;
-transform:scale(1.1);
-}
-
-.blink{
-animation:blink 1.5s infinite alternate;
-}
-
-@keyframes blink{
-0%{opacity:1;}
-100%{opacity:0.4;}
-}
-
-/* CATEGORY */
-
-.prog-category{
-display:flex;
-justify-content:center;
-gap:20px;
-padding:40px;
-flex-wrap:wrap;
-background:#fff;
-}
-
-.cat-box{
-padding:20px 40px;
-background:#8a001d;
-color:#fff;
-border-radius:10px;
-animation:pulse 3s infinite alternate;
-}
-
-@keyframes pulse{
-0%{box-shadow:0 0 10px #8a001d;}
-100%{box-shadow:0 0 25px #8a001d;}
-}
-
-/* PROGRAMMING */
-
-.programming-section{
-padding:80px 5%;
-background:#f9f9f9;
-text-align:center;
-}
-
-.prog-wrapper{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.prog-card{
-background:#fff;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
-transform:translateY(50px);
-opacity:0;
-transition:1s;
-}
-
-.prog-card.active{
-transform:translateY(0);
-opacity:1;
-}
-
-.prog-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 20px #8a001d;
-}
-
-.prog-card i{
-font-size:40px;
-color:#8a001d;
-margin-bottom:10px;
-}
-
-.prog-card span{
-display:block;
-margin:5px 0;
-font-weight:bold;
-}
-
-.prog-card button{
-margin-top:10px;
-padding:10px 20px;
-background:#8a001d;
-color:#fff;
-border:none;
-cursor:pointer;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.nav-wrapper{flex-direction:column;}
-.logo-box{clip-path:none;width:100%}
-
-.menu-toggle{
-display:block;
-position:absolute;
-right:20px;
-top:25px;
-z-index:10001;
-}
-
-.nav-links{
-position:fixed;
-top:0;
-left:-100%;
-width:75%;
-height:100vh;
-background:#fff;
-flex-direction:column;
-padding:80px 20px;
-transition:.4s;
-}
-
-.nav-links.active{left:0;}
-
-.dropdown-menu{
-position:static;
-display:none;
-}
-
-.dropdown.active .dropdown-menu{
-display:block;
-}
-
-.prog-hero{height:50vh;}
-
-}
-
-
-
-.edu-footer{
-background:#fff;
-color:#800000;
-padding:60px 8%;
-overflow:hidden;
-}
-
-.footer-container{
-display:flex;
-flex-wrap:wrap;
-gap:40px;
-}
-
-.footer-col{
-flex:1;
-animation:fadeUp 1s ease;
-}
-
-.footer-col h3{
-margin-bottom:10px;
-}
-
-.footer-col ul{
-list-style:none;
-padding:0;
-}
-
-.footer-col ul li{
-margin:8px 0;
-}
-
-.footer-col ul li a{
-text-decoration:none;
-color:#800000;
-transition:.4s;
-}
-
-.footer-col ul li a:hover{
-padding-left:10px;
-color:#ff8c00;
-}
-
-/* Social Hover Glow */
-.footer-col i{
-margin-right:10px;
-cursor:pointer;
-transition:.4s;
-}
-
-.footer-col i:hover{
-transform:scale(1.3);
-color:#ff8c00;
-}
-
-/* Bottom Animation */
-.footer-bottom{
-text-align:center;
-margin-top:40px;
-border-top:1px solid #ddd;
-padding-top:15px;
-animation:slideUp 2s infinite alternate;
-}
-
-@keyframes fadeUp{
-0%{transform:translateY(40px);opacity:0}
-100%{transform:translateY(0);opacity:1}
-}
-
-@keyframes slideUp{
-0%{transform:translateY(0)}
-100%{transform:translateY(-5px)}
-}
-
-@media(max-width:768px){
-.footer-container{
-flex-direction:column;
-}
-}
-
-
-.course-social{
-display:flex;
-justify-content:center;
-margin-top:15px;
-gap:10px;
-}
-
-.course-social a{
-width:35px;
-height:35px;
-line-height:35px;
-text-align:center;
-border-radius:50%;
-background:#800000;
-color:#fff;
-font-size:14px;
-transition:.5s;
-position:relative;
-overflow:hidden;
-}
-
-.course-social a:hover{
-background:#fff;
-color:#800000;
-border:1px solid #800000;
-transform:rotate(360deg) scale(1.2);
-box-shadow:0 0 15px #800000;
-}
-
-
-
-.course-social a{
-animation:floatIcon 3s ease-in-out infinite;
-}
-
-@keyframes floatIcon{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-5px);}
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-<div class="top-bar">Welcome To Stackly School</div>
+<div class="top-bar">
+Welcome To Stackly School
+</div>
 
 <div class="nav-wrapper">
 
@@ -394,6 +26,7 @@ animation:floatIcon 3s ease-in-out infinite;
 <a href="#">Home</a>
 <ul class="dropdown-menu">
 <li><a href="index.html">Home 1</a></li>
+<!-- <li><a href="home2.html">Home 2</a></li> -->
 </ul>
 </li>
 
@@ -403,129 +36,576 @@ animation:floatIcon 3s ease-in-out infinite;
 <li><a href="contact2.html">Contact</a></li>
 <li><a href="dash.html">Dashboard</a></li>
 
-
 </ul>
 
 <a href="login.html" class="apply-btn">Login</a>
 
 </nav>
+
 </div>
+
 </header>
 
-<section class="prog-hero">
 
-<div class="hero-slide active">
-<h1 class="blink">Learn Programming From Experts</h1>
-<p>Join 60K+ learners</p>
-</div>
+<!-- PROGRAMMING COURSES SECTION -->
+<section class="programming">
 
-<div class="hero-slide">
-<h1 class="blink">Start Coding Today</h1>
-<p>Build your career</p>
-</div>
+<h5 class="section-sub">OUR PROGRAMMING COURSES</h5>
+<h2 class="section-title">School | College | IT Professional Courses</h2>
 
-</section>
+<div class="course-container">
 
-<section class="prog-category">
-<div class="cat-box">Frontend</div>
-<div class="cat-box">Backend</div>
-<div class="cat-box">AI & ML</div>
-<div class="cat-box">Full Stack</div>
-</section>
-
-<section class="programming-section">
-
-<div class="prog-wrapper">
-
-<div class="prog-card"><i class="fab fa-html5"></i><h3>HTML</h3><p>2 Months</p><span>120 Students</span><button>Enroll</button></div>
-<div class="prog-card"><i class="fab fa-js"></i><h3>JavaScript</h3><p>3 Months</p><span>150 Students</span><button>Enroll</button></div>
-<div class="prog-card"><i class="fab fa-python"></i><h3>Python</h3><p>4 Months</p><span>180 Students</span><button>Enroll</button></div>
-<div class="prog-card"><i class="fab fa-java"></i><h3>Java</h3><p>5 Months</p><span>200 Students</span><button>Enroll</button></div>
-<div class="prog-card"><i class="fab fa-react"></i><h3>React</h3><p>3 Months</p><span>140 Students</span><button>Enroll</button></div>
-<div class="prog-card"><i class="fab fa-node"></i><h3>Node</h3><p>4 Months</p><span>160 Students</span><button>Enroll</button></div>
-
-</div>
-
-</section>
-<footer class="edu-footer">
-
-<div class="footer-container">
-
-<div class="footer-col">
-<h2>EduPro College</h2>
-<p>
-Providing quality education with
-modern infrastructure and
-career-focused learning.
-</p>
-</div>
-<div class="course-social">
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-twitter"></i></a>
-<a href="#"><i class="fab fa-linkedin-in"></i></a>
-</div>
-<div class="footer-col">
-<h3>Quick Links</h3>
+<!-- SCHOOL -->
+<div class="course-card">
+<h3>School Programming</h3>
 <ul>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Academics</a></li>
-<li><a href="#">Admissions</a></li>
-<li><a href="#">Campus Life</a></li>
-<li><a href="#">Events</a></li>
+<li>Scratch Programming</li>
+<li>Basic HTML & CSS</li>
+<li>Python for Kids</li>
+<li>Computer Fundamentals</li>
+<li>Logical Thinking</li>
+<li>Basic Game Development</li>
 </ul>
+<button>Enroll Now</button>
 </div>
 
-<div class="footer-col">
-<h3>Student Support</h3>
+<!-- COLLEGE -->
+<div class="course-card">
+<h3>College Programming</h3>
 <ul>
-<li><a href="#">Help Center</a></li>
-<li><a href="#">Fee Structure</a></li>
-<li><a href="#">Hostel</a></li>
-<li><a href="#">Placement</a></li>
-<li><a href="#">Transport</a></li>
+<li>C Programming</li>
+<li>C++ Programming</li>
+<li>Java Programming</li>
+<li>Data Structures</li>
+<li>DBMS</li>
+<li>Operating System</li>
 </ul>
+<button>Enroll Now</button>
 </div>
 
-<div class="footer-col">
-<h3>Contact Info</h3>
-<p>Email : info@edupro.edu</p>
-<p>Phone : +91 9876543210</p>
-<p>Location : Tamil Nadu</p>
+<!-- IT SECTOR -->
+<div class="course-card">
+<h3>IT Professional Courses</h3>
+<ul>
+<li>Full Stack Development</li>
+<li>Cyber Security</li>
+<li>Data Science</li>
+<li>Cloud Computing</li>
+<li>AI & Machine Learning</li>
+<li>Software Testing</li>
+</ul>
+<button>Join Now</button>
 </div>
 
 </div>
 
-<div class="footer-bottom">
-<p>© 2026 EduPro College. All Rights Reserved</p>
+</section>
+
+
+<section class="career">
+
+<h5>CAREER OPPORTUNITIES</h5>
+<h2>After Completing Our Programming Courses</h2>
+
+<div class="career-box">
+
+<div class="flip-card">
+<div class="flip-inner">
+<div class="flip-front">Web Developer</div>
+<div class="flip-back">
+<p>Create Websites using HTML, CSS, JS</p>
+</div>
+</div>
 </div>
 
-</footer>
-<script>
+<div class="flip-card">
+<div class="flip-inner">
+<div class="flip-front">Software Engineer</div>
+<div class="flip-back">
+<p>Build Desktop & Mobile Apps</p>
+</div>
+</div>
+</div>
 
-const toggle=document.getElementById("menu-toggle");
-const nav=document.getElementById("nav-links");
-toggle.onclick=()=>{nav.classList.toggle("active");}
+<div class="flip-card">
+<div class="flip-inner">
+<div class="flip-front">Cyber Security</div>
+<div class="flip-back">
+<p>Protect Systems & Networks</p>
+</div>
+</div>
+</div>
 
-let slides=document.querySelectorAll(".hero-slide");
-let i=0;
-setInterval(()=>{
-slides[i].classList.remove("active");
-i=(i+1)%slides.length;
-slides[i].classList.add("active");
-},3000);
+<div class="flip-card">
+<div class="flip-inner">
+<div class="flip-front">Data Scientist</div>
+<div class="flip-back">
+<p>Analyze Big Data</p>
+</div>
+</div>
+</div>
 
-let cards=document.querySelectorAll(".prog-card");
-window.addEventListener("scroll",()=>{
-cards.forEach(card=>{
-let top=card.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
-card.classList.add("active");
+</div>
+</section>
+
+<section class="counter">
+
+<div class="count-box">
+<h2 class="count" data-target="1200">0</h2>
+<p>Students Enrolled</p>
+</div>
+
+<div class="count-box">
+<h2 class="count" data-target="950">0</h2>
+<p>Students Placed</p>
+</div>
+
+<div class="count-box">
+<h2 class="count" data-target="35">0</h2>
+<p>IT Courses</p>
+</div>
+
+<div class="count-box">
+<h2 class="count" data-target="50">0</h2>
+<p>Certified Trainers</p>
+</div>
+
+</section>
+
+
+<section class="timeline">
+
+<h2>Programming Learning Path</h2>
+
+<div class="time-line">
+
+<div class="time-item">School Level Coding</div>
+<div class="time-item">College Programming</div>
+<div class="time-item">Internship Training</div>
+<div class="time-item">IT Professional Course</div>
+<div class="time-item">Placement Support</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<style>
+/* TOP BAR */
+.top-bar{
+background:#8a001d;
+color:#fff;
+padding:10px 5%;
 }
+
+/* WRAPPER */
+.nav-wrapper{
+display:flex;
+position:relative;
+}
+
+/* LOGO */
+.logo-box{
+background:#8a001d;
+color:#fff;
+padding:25px;
+text-align:center;
+clip-path:polygon(0 0,100% 0,100% 80%,50% 100%,0 80%);
+}
+
+.logo-box img{
+width:60px;
+margin-bottom:5px;
+}
+
+/* NAVBAR */
+.navbar{
+flex:1;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#fff;
+padding:15px 30px;
+position:relative;
+}
+
+/* NAV LINKS (VISIBLE IN DESKTOP ✅) */
+.nav-links{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.nav-links li{
+position:relative;
+}
+
+.nav-links li a{
+text-decoration:none;
+color:#000;
+}
+
+/* DESKTOP DROPDOWN */
+.dropdown-menu{
+display:none;
+position:absolute;
+top:35px;
+background:#fff;
+list-style:none;
+padding:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+/* APPLY */
+.apply-btn{
+background:#8a001d;
+color:#fff;
+padding:10px 25px;
+border-radius:30px;
+text-decoration:none;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+display:none;
+font-size:25px;
+cursor:pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.nav-wrapper{
+flex-direction:column;
+}
+
+.logo-box{
+clip-path:none;
+width:100%;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:25px;
+z-index:10001;
+}
+
+/* SLIDE MENU */
+.nav-links{
+position:fixed;
+top:0;
+left:-100%;
+width:75%;
+height:100vh;
+background:#fff;
+flex-direction:column;
+padding:80px 20px;
+transition:0.4s ease;
+z-index:9999;
+gap:20px;
+}
+
+.nav-links.active{
+left:0;
+}
+
+/* MOBILE DROPDOWN */
+.dropdown-menu{
+position:static;
+display:none;
+padding-left:10px;
+}
+
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+/* APPLY BTN */
+.apply-btn{
+display:none;
+}
+
+}
+
+
+
+
+.programming{
+padding:80px 5%;
+background:#fff;
+text-align:center;
+}
+
+.section-sub{
+color:#800000;
+letter-spacing:2px;
+animation:slideDown 1s ease;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:40px;
+color:#333;
+animation:fadeIn 2s ease;
+}
+
+.course-container{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.course-card{
+width:300px;
+background:#fff;
+border-radius:10px;
+padding:30px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.5s;
+animation:zoomIn 1.5s ease;
+}
+
+.course-card:hover{
+transform:translateY(-10px);
+background:#800000;
+color:#fff;
+}
+
+.course-card ul{
+list-style:none;
+padding:0;
+}
+
+.course-card li{
+padding:6px;
+}
+
+.course-card button{
+margin-top:15px;
+padding:10px 20px;
+background:#800000;
+border:none;
+color:#fff;
+cursor:pointer;
+transition:0.3s;
+}
+
+.course-card:hover button{
+background:#fff;
+color:#800000;
+}
+
+@keyframes slideDown{
+from{opacity:0;transform:translateY(-50px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes zoomIn{
+from{opacity:0;transform:scale(0.5);}
+to{opacity:1;transform:scale(1);}
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.course-container{
+flex-direction:column;
+align-items:center;
+}
+}
+
+
+.career{
+padding:80px 5%;
+background:#fdf5f5;
+text-align:center;
+}
+
+.career-box{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.flip-card{
+width:220px;
+height:150px;
+perspective:1000px;
+}
+
+.flip-inner{
+position:relative;
+width:100%;
+height:100%;
+transition:transform 0.8s;
+transform-style:preserve-3d;
+}
+
+.flip-card:hover .flip-inner{
+transform:rotateY(180deg);
+}
+
+.flip-front,.flip-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:10px;
+background:#800000;
+color:#fff;
+}
+
+.flip-back{
+transform:rotateY(180deg);
+background:#fff;
+color:#800000;
+border:2px solid #800000;
+}
+
+
+
+
+.counter{
+display:flex;
+justify-content:space-around;
+padding:60px;
+background:#800000;
+color:#fff;
+text-align:center;
+flex-wrap:wrap;
+}
+
+.count-box h2{
+font-size:40px;
+}
+
+
+
+
+
+.timeline{
+padding:80px;
+background:#fff;
+text-align:center;
+}
+
+.time-line{
+display:flex;
+overflow-x:auto;
+gap:20px;
+}
+
+.time-item{
+min-width:200px;
+background:#800000;
+color:#fff;
+padding:20px;
+border-radius:8px;
+animation:slide 5s infinite alternate;
+}
+
+@keyframes slide{
+from{transform:translateX(-20px);}
+to{transform:translateX(20px);}
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+const dropdown = document.getElementById("homeDrop");
+
+// HAMBURGER CLICK
+toggle.onclick = () =>{
+nav.classList.toggle("active");
+}
+
+// MOBILE DROPDOWN
+dropdown.onclick = (e) =>{
+
+if(window.innerWidth <= 768){
+e.preventDefault();
+dropdown.classList.toggle("active");
+}
+
+}
+
+
+
+
+
+window.addEventListener("scroll",function(){
+let cards=document.querySelectorAll(".course-card");
+cards.forEach(card=>{
+let pos=card.getBoundingClientRect().top;
+let screen=window.innerHeight;
+if(pos<screen){
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+}
+})
+})
+
+
+
+
+let counters=document.querySelectorAll(".count");
+
+counters.forEach(counter=>{
+counter.innerText='0';
+
+let update=()=>{
+let target=+counter.getAttribute("data-target");
+let c=+counter.innerText;
+let inc=target/200;
+
+if(c<target){
+counter.innerText=`${Math.ceil(c+inc)}`;
+setTimeout(update,10);
+}
+else{
+counter.innerText=target;
+}
+}
+update();
 });
-});
+
+
+
+
+
 
 </script>
-
-</body>
-</html>

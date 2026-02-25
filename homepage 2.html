@@ -14,11 +14,10 @@ STACKLY
 
 <ul class="nav-links" id="nav-links">
 
-<li class="dropdown" id="homeDrop">
-<a href="homepage 2.html">Home</a>
+<li class="dropdown">
+<a href="#" class="drop-toggle">Home</a>
 <ul class="dropdown-menu">
 <li><a href="index.html">Home Page 1</a></li>
-<!-- <li><a href="home2.html">Home Page 2</a></li> -->
 </ul>
 </li>
 
@@ -1368,6 +1367,64 @@ text-align:center;
 
 }
 
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+
+
+@media(max-width:768px){
+
+.nav-links{
+position:absolute;
+top:70px;
+left:-100%;
+width:100%;
+background:#1e3a5f;
+flex-direction:column;
+padding:20px;
+transition:.4s;
+z-index:999;
+}
+
+.nav-links.active{
+left:0;
+}
+
+/* DROPDOWN MOBILE */
+.dropdown-menu{
+display:none;
+position:static;
+background:#fff;
+}
+
+.dropdown.open .dropdown-menu{
+display:block;
+}
+
+.menu-toggle{
+display:block;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .news{
 padding:60px 5%;
@@ -1955,6 +2012,66 @@ card.classList.add("show");
 }
 });
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+/* HAMBURGER MENU */
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", function(){
+navLinks.classList.toggle("active");
+});
+
+/* MOBILE HOME DROPDOWN */
+const homeToggle = document.querySelector(".home-toggle");
+const homeDrop = document.getElementById("homeDrop");
+
+homeToggle.addEventListener("click", function(e){
+
+if(window.innerWidth <= 768){
+e.preventDefault();   // stop page reload
+homeDrop.classList.toggle("active");
+}
+
+});
+
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+/* HAMBURGER */
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", function(e){
+e.stopPropagation();
+navLinks.classList.toggle("active");
+});
+
+/* MOBILE DROPDOWN */
+const dropToggle = document.querySelector(".drop-toggle");
+
+dropToggle.addEventListener("click", function(e){
+
+if(window.innerWidth <= 768){
+e.preventDefault();
+this.parentElement.classList.toggle("open");
+}
+
+});
+
+});
+
+
+
 </script>
 </body>
 </html>

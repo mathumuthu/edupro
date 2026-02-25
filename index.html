@@ -37,11 +37,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <ul class="nav-links" id="menu">
 <!-- <li><a href="404.html">Home</a></li> -->
-<li>
-<a href="">Home</a>
+<li class="menu-item">
+<a href="#" class="mobile-dropdown-toggle">Home</a>
+
 <ul class="dropdown">
-<li><a href="homepage 2.html">Home page 1</a></li>
-<!-- <li><a href="#">Mission</a></li> -->
+<li><a href="homepage 2.html">Home Page 2</a></li>
 </ul>
 </li>
 <li><a href="course.html">course</a></li>
@@ -286,12 +286,80 @@ border-radius:25px;
 text-decoration:none;
 }
 
+/* HAMBURGER ICON */
 .hamburger{
 display:none;
-font-size:25px;
 cursor:pointer;
 }
 
+/* MOBILE VIEW */
+@media(max-width:768px){
+
+.topbar{
+padding:8px 15px;
+font-size:13px;
+}
+
+.navbar{
+padding:15px 20px;
+}
+
+/* BIG MOBILE MENU BUTTON */
+.hamburger{
+display:block;
+font-size:38px;
+background:#b2082c;
+color:#fff;
+width:55px;
+height:55px;
+border-radius:12px;
+text-align:center;
+line-height:55px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+z-index:999;
+transition:0.3s;
+}
+
+/* CLICK ANIMATION */
+.hamburger:active{
+transform:scale(0.9);
+}
+
+/* MENU MOBILE STYLE */
+.nav-links{
+position:fixed;
+top:0;
+left:-100%;
+width:260px;
+height:100vh;
+background:#8a001d;
+flex-direction:column;
+padding-top:120px;
+transition:0.4s;
+z-index:998;
+}
+
+/* SHOW MENU */
+.nav-links.active{
+left:0;
+}
+
+.nav-links li{
+margin:20px 0;
+text-align:center;
+}
+
+.nav-links li a{
+color:#fff;
+font-size:18px;
+}
+
+/* HIDE RIBBON IN MOBILE */
+.ribbon{
+display:none;
+}
+
+}
 /* HERO SLIDER */
 .hero{
 height:90vh;
@@ -319,6 +387,75 @@ width:100%;
 height:100%;
 background:linear-gradient(to right,rgba(0,0,0,0.7),rgba(0,0,0,0.2));
 }
+
+
+@media(max-width:768px){
+
+/* STOP DESKTOP FLEX BREAK */
+.nav-links{
+margin-left:0 !important;
+display:block;
+}
+
+/* FIX NAVBAR */
+.navbar{
+flex-direction:row;
+padding:15px 20px;
+}
+
+/* MOBILE SLIDE MENU */
+.nav-links{
+position:fixed;
+top:0;
+left:-100%;
+width:260px;
+height:100vh;
+background:#8a001d;
+padding-top:120px;
+transition:0.4s;
+z-index:999;
+}
+
+/* SHOW MENU */
+.nav-links.active{
+left:0;
+}
+
+/* MENU ITEMS */
+.nav-links li{
+margin:20px 0;
+text-align:center;
+}
+
+/* TEXT COLOR */
+.nav-links li a{
+color:#fff;
+font-size:18px;
+}
+
+/* HIDE DESKTOP RIBBON */
+.ribbon{
+display:none;
+}
+
+}
+
+
+html,body{
+overflow-x:hidden;
+}
+
+.hero{
+width:100%;
+overflow:hidden;
+}
+
+
+
+
+
+
+
 
 .hero-text{
 position:absolute;
@@ -571,6 +708,117 @@ justify-content:center;
 
 }
 
+
+
+.nav-links{
+display:flex;
+list-style:none;
+margin-left:200px;
+}
+
+
+
+.nav-links{
+display:flex;
+list-style:none;
+align-items:center;
+gap:20px;
+}
+
+@media(max-width:768px){
+
+html,body{
+overflow-x:hidden;
+}
+
+/* NAVBAR FIX */
+.navbar{
+padding:15px 20px;
+}
+
+/* HIDE RIBBON IN MOBILE */
+.ribbon{
+display:none;
+}
+
+/* MOBILE MENU */
+.nav-links{
+position:fixed;
+top:0;
+left:-100%;
+width:260px;
+height:100vh;
+background:#8a001d;
+flex-direction:column;
+align-items:center;
+padding-top:120px;
+margin-left:0 !important;
+transition:0.4s;
+z-index:9999;
+}
+
+/* SHOW MENU */
+.nav-links.active{
+left:0;
+}
+
+.nav-links li{
+margin:20px 0;
+}
+
+.nav-links li a{
+color:white;
+font-size:18px;
+}
+
+/* HAMBURGER */
+.hamburger{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+width:55px;
+height:55px;
+background:#b2082c;
+border-radius:12px;
+cursor:pointer;
+z-index:10000;
+}
+
+.hamburger span{
+width:28px;
+height:3px;
+background:white;
+margin:4px;
+}
+
+}
+
+@media(max-width:768px){
+
+.dropdown{
+display:none;
+position:static;
+background:#a10025;
+box-shadow:none;
+width:100%;
+}
+
+.dropdown.show{
+display:block;
+}
+
+.menu-item a{
+color:white;
+}
+
+}
+
+
+
+
+
+
 </style>
 </head>
 
@@ -770,6 +1018,17 @@ text-align:center;
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -947,6 +1206,24 @@ font-size:28px;
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </style>
 
@@ -2152,4 +2429,58 @@ Submit Application
 </footer>
 
 </body>
+</html>
+
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.addEventListener("click", function(){
+menu.classList.toggle("active");
+});
+
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.addEventListener("click", function(){
+menu.classList.toggle("active");
+});
+
+/* MOBILE DROPDOWN */
+const toggles = document.querySelectorAll(".mobile-dropdown-toggle");
+
+toggles.forEach(function(toggle){
+toggle.addEventListener("click", function(e){
+e.preventDefault();
+this.nextElementSibling.classList.toggle("show");
+});
+});
+
+});
+
+
+
+
+
+</script>
+
+
+
+</body>
+
 </html>
