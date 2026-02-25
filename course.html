@@ -22,11 +22,10 @@ Welcome To Stackly School
 
 <ul class="nav-links" id="nav-links">
 
-<li class="dropdown" id="homeDrop">
+<li class="dropdown">
 <a href="#">Home</a>
 <ul class="dropdown-menu">
 <li><a href="index.html">Home 1</a></li>
-<!-- <li><a href="home2.html">Home 2</a></li> -->
 </ul>
 </li>
 
@@ -36,9 +35,11 @@ Welcome To Stackly School
 <li><a href="contact2.html">Contact</a></li>
 <li><a href="dash.html">Dashboard</a></li>
 
-</ul>
-
+<li>
 <a href="login.html" class="apply-btn">Login</a>
+</li>
+
+</ul>
 
 </nav>
 
@@ -244,8 +245,8 @@ padding:10px 5%;
 .nav-wrapper{
 display:flex;
 position:relative;
+z-index:999;
 }
-
 /* LOGO */
 .logo-box{
 background:#8a001d;
@@ -269,6 +270,7 @@ justify-content:space-between;
 background:#fff;
 padding:15px 30px;
 position:relative;
+z-index:1000;
 }
 
 /* NAV LINKS (VISIBLE IN DESKTOP ✅) */
@@ -341,12 +343,12 @@ z-index:10001;
 }
 
 /* SLIDE MENU */
-.nav-links{
-position:fixed;
-top:0;
-left:-100%;
+.navbar{
+position:relative;
+z-index:999;
+
 width:75%;
-height:100vh;
+
 background:#fff;
 flex-direction:column;
 padding:80px 20px;
@@ -624,6 +626,136 @@ gap:5px;
 }
 
 
+@media(max-width:768px){
+
+.nav-wrapper{
+flex-direction:column;
+}
+
+.logo-box{
+clip-path:none;
+width:100%;
+}
+
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:25px;
+font-size:26px;
+color:#8a001d;
+z-index:1000;
+}
+
+/* MOBILE MENU BELOW HEADER */
+.nav-links{
+/* position:absolute;
+top:100%;
+left:0;
+width:100%; */
+background:#fff;
+flex-direction:column;
+padding:20px;
+display:none;
+gap:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.nav-links li{
+width:100%;
+border-bottom:1px solid #eee;
+padding:10px 0;
+}
+
+.dropdown-menu{
+display:none;
+position:static;
+background:#f5f5f5;
+padding:10px;
+margin-top:5px;
+}
+
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+.apply-btn{
+display:block;
+text-align:center;
+margin-top:10px;
+}
+
+}
+
+
+
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:25px;
+font-size:26px;
+color:#8a001d;
+}
+
+/* THIS IS THE MAIN FIX */
+.nav-links{
+position:absolute;
+top:60px;   /* BELOW NAVBAR */
+left:0;
+width:100%;
+background:#fff;
+flex-direction:column;
+padding:20px;
+display:none;
+gap:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.nav-links li{
+width:100%;
+border-bottom:1px solid #eee;
+padding:10px 0;
+}
+
+.dropdown-menu{
+display:none;
+position:static;
+background:#f5f5f5;
+padding:10px;
+margin-top:5px;
+}
+
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+.apply-btn{
+display:block;
+text-align:center;
+margin-top:10px;
+}
+
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -760,63 +892,25 @@ animation:floatIcon 3s ease-in-out infinite;
 
 </style>
 <script>
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav-links");
-const dropdown = document.getElementById("homeDrop");
 
-// HAMBURGER CLICK
-toggle.onclick = () =>{
-nav.classList.toggle("active");
-}
+// HAMBURGER MENU
+document.getElementById("menu-toggle")
+.addEventListener("click", function(){
+document.getElementById("nav-links")
+.classList.toggle("active");
+});
 
 // MOBILE DROPDOWN
-dropdown.onclick = (e) =>{
+document.querySelectorAll(".dropdown > a")
+.forEach(btn=>{
+btn.addEventListener("click", function(e){
 
 if(window.innerWidth <= 768){
 e.preventDefault();
-dropdown.classList.toggle("active");
-}
-
-}
-
-// CLOSE MENU OUTSIDE
-document.addEventListener("click",(e)=>{
-
-if(!toggle.contains(e.target) && !nav.contains(e.target)){
-nav.classList.remove("active");
-dropdown.classList.remove("active");
+this.parentElement.classList.toggle("active");
 }
 
 });
-
-
-
-
-
-
-window.addEventListener('scroll',()=>{
-document.querySelectorAll('.course-card').forEach(card=>{
-let top = card.getBoundingClientRect().top;
-let screen = window.innerHeight;
-if(top < screen - 100){
-card.style.opacity="1";
-card.style.transform="translateY(0)";
-}
 });
-});
-
-
-
-window.addEventListener('scroll',()=>{
-document.querySelectorAll('.course-card').forEach(card=>{
-let pos = card.getBoundingClientRect().top;
-let screen = window.innerHeight;
-if(pos < screen-100){
-card.style.opacity="1";
-card.style.transform="translateY(0)";
-}
-});
-});
-
 
 </script>
