@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduPro - 404 Error</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#004e92,#000428);
+overflow:hidden;
+}
+
+/* FLOATING SHAPES */
+
+.shape{
+position:absolute;
+background:#fff;
+opacity:0.1;
+border-radius:50%;
+animation:float 6s infinite linear;
+}
+
+.shape:nth-child(1){
+width:120px;
+height:120px;
+top:10%;
+left:20%;
+}
+
+.shape:nth-child(2){
+width:80px;
+height:80px;
+top:60%;
+left:70%;
+animation-duration:9s;
+}
+
+.shape:nth-child(3){
+width:150px;
+height:150px;
+top:70%;
+left:10%;
+animation-duration:12s;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-1000px);}
+}
+
+/* CONTENT */
+
+.error-box{
+text-align:center;
+color:#fff;
+padding:20px;
+z-index:2;
+}
+
+.error-box h1{
+font-size:120px;
+letter-spacing:5px;
+}
+
+.error-box h2{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.error-box p{
+margin-bottom:25px;
+}
+
+.btn{
+background:#fff;
+color:#004e92;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#00c6ff;
+color:#fff;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.error-box h1{
+font-size:70px;
+}
+
+.error-box h2{
+font-size:22px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+
+<div class="error-box" data-aos="zoom-in">
+
+<h1>404</h1>
+<h2>Oops! Page Not Found</h2>
+<p>The page you are looking for might be removed or temporarily unavailable.</p>
+
+<a href="homepage 2.html" class="btn">Back To Home</a>
+
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init({
+duration:1000,
+});
+</script>
+
+</body>
+</html>
