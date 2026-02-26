@@ -345,8 +345,55 @@ transition:1s;
 
 
 
+/* PARENT MUST */
+.navbar ul li{
+    position:relative;
+    list-style:none;
+}
 
+/* DROPDOWN MENU */
+.dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:200px;
+    background:blue;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:0.3s ease;
+    z-index:999;
+}
 
+/* SHOW DROPDOWN */
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* LINKS */
+.dropdown-menu li a{
+    display:block;
+    padding:10px;
+    color:#fff;
+}
+@media(max-width:768px){
+
+.dropdown-menu{
+    position:static;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    display:none;
+    width:100%;
+}
+
+.dropdown.active .dropdown-menu{
+    display:block;
+}
+
+}
 
 
 
@@ -381,12 +428,14 @@ transition:1s;
 
 <ul class="nav-links" id="nav-links">
 
-<li class="dropdown" id="homeDrop">
-<a href="#">Home</a>
-<ul class="dropdown-menu">
-<li><a href="index.html">Home 1</a></li>
-<li><a href="homepage 2.html">Home 2</a></li>
-</ul>
+<li class="dropdown">
+    <a href="#">Home <i class="fa fa-chevron-down"></i></a>
+
+    <ul class="dropdown-menu">
+        <li><a href="index.html">Home 1</a></li>
+        <li><a href="homepage 2.html">Home 2</a></li>
+        <!-- <li><a href="homepage 3.html">Home 3</a></li> -->
+    </ul>
 </li>
 
 <li><a href="instrudutor.html">Instructors</a></li>
@@ -452,43 +501,43 @@ transition:1s;
 <p>Empowering Students for a Brighter Future Through Innovation & Excellence.</p>
 
 <div class="social-icons">
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-twitter"></i></a>
-<a href="#"><i class="fab fa-linkedin-in"></i></a>
+<a href="error.html"><i class="fab fa-facebook-f"></i></a>
+<a href="error.html"><i class="fab fa-instagram"></i></a>
+<a href="error.html"><i class="fab fa-twitter"></i></a>
+<a href="error.html"><i class="fab fa-linkedin-in"></i></a>
 </div>
 </div>
 
 <div class="footer-box">
 <h3>Academics</h3>
 <ul>
-<li><a href="#">Undergraduate Programs</a></li>
-<li><a href="#">Postgraduate Programs</a></li>
-<li><a href="#">Online Courses</a></li>
-<li><a href="#">Research</a></li>
-<li><a href="#">Scholarships</a></li>
+<li><a href="error.html">Undergraduate Programs</a></li>
+<li><a href="error.html">Postgraduate Programs</a></li>
+<li><a href="error.html">Online Courses</a></li>
+<li><a href="error.html">Research</a></li>
+<li><a href="error.html">Scholarships</a></li>
 </ul>
 </div>
 
 <div class="footer-box">
 <h3>Campus Life</h3>
 <ul>
-<li><a href="#">Student Clubs</a></li>
-<li><a href="#">Sports Activities</a></li>
-<li><a href="#">Hostel Facilities</a></li>
-<li><a href="#">Library</a></li>
-<li><a href="#">Events</a></li>
+<li><a href="error.html">Student Clubs</a></li>
+<li><a href="error.html">Sports Activities</a></li>
+<li><a href="error.html">Hostel Facilities</a></li>
+<li><a href="error.html">Library</a></li>
+<li><a href="error.html">Events</a></li>
 </ul>
 </div>
 
 <div class="footer-box">
 <h3>Our Campus</h3>
 <ul>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Gallery</a></li>
-<li><a href="#">Admissions</a></li>
-<li><a href="#">Departments</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="error.html">About Us</a></li>
+<li><a href="error.html">Gallery</a></li>
+<li><a href="error.html">Admissions</a></li>
+<li><a href="error.html">Departments</a></li>
+<li><a href="error.html">Contact</a></li>
 </ul>
 </div>
 
@@ -513,20 +562,41 @@ transition:1s;
 
 <script>
 
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav-links");
-const homeDrop = document.getElementById("homeDrop");
+// const toggle = document.getElementById("menu-toggle");
+// const nav = document.getElementById("nav-links");
+// const homeDrop = document.getElementById("homeDrop");
 
-toggle.onclick = ()=>{
-nav.classList.toggle("active");
+// toggle.onclick = ()=>{
+// nav.classList.toggle("active");
+// }
+
+// homeDrop.onclick = function(e){
+// if(window.innerWidth <= 768){
+// e.preventDefault();
+// this.classList.toggle("active");
+// }
+// }
+
+const footerBox=document.querySelectorAll(".footer-box");
+
+function showFooter(){
+
+footerBox.forEach(box=>{
+
+let pos=box.getBoundingClientRect().top;
+let screen=window.innerHeight;
+
+if(pos < screen-50){
+box.style.opacity="1";
+box.style.transform="translateY(0)";
 }
 
-homeDrop.onclick = function(e){
-if(window.innerWidth <= 768){
-e.preventDefault();
-this.classList.toggle("active");
+});
+
 }
-}
+
+window.addEventListener("scroll",showFooter);
+window.addEventListener("load",showFooter);
 
 
 
@@ -551,6 +621,17 @@ box.style.transform="translateY(0px)";
 
 
 </script>
+<script>
+document.querySelectorAll(".dropdown > a").forEach(menu=>{
+    menu.addEventListener("click", function(e){
 
+        if(window.innerWidth <= 768){
+            e.preventDefault();
+            this.parentElement.classList.toggle("active");
+        }
+
+    });
+});
+</script>
 </body>
 </html>

@@ -307,6 +307,143 @@ display:block;
 
 }
 
+
+
+
+
+
+
+
+/* REMOVE DEFAULT DOTS */
+.dropdown-menu{
+    list-style:none;
+    margin:0;
+    padding:5px 0;
+    position:absolute;
+    top:calc(100% + 5px);
+    left:0;
+    background:#fff;
+    min-width:150px;
+    width:auto;
+    border-radius:6px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s ease;
+    z-index:999;
+}
+
+.dropdown-menu li{
+    list-style:none;
+}
+
+.dropdown-menu li a{
+    color:#800000;
+    display:inline-block;
+    padding:6px 14px;
+    white-space:nowrap;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+}
+
+
+/* DROPDOWN */
+ .dropdown-menu{
+display:none;
+position:absolute;
+background:#fff;
+top:40px;
+padding:10px;
+border-radius:5px;
+animation:fadeDrop .5s ease;
+}
+
+.dropdown-menu li a{
+color:#800000;
+display:block;
+padding:5px 10px;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:calc(100% + 5px); /* 👈 இதுதான் main fix */
+     left:0;
+    background:#fff;
+    min-width:180px;
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s ease;
+    z-index:999;
+} 
+
+
+
+ 
+.dropdown::after{
+    content:"";
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    height:10px;   /* gap bridge */
+ }
+
+
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ANIMATION */
 @keyframes slideLogo{
 from{transform:translateX(-40px);opacity:0;}
@@ -584,5 +721,32 @@ this.parentElement.classList.toggle("active");
 
 
 
+
+</script>
+<script>
+
+const dropdown = document.querySelector(".dropdown");
+const menu = document.querySelector(".dropdown-menu");
+
+dropdown.addEventListener("mouseenter", function(){
+
+    if(window.innerWidth > 768){
+
+        if(!menu.classList.contains("fixed-pos")){
+            menu.style.top = "80%";   // light down
+            menu.classList.add("fixed-pos");
+        }
+
+    }
+
+});
+
+dropdown.addEventListener("mouseleave", function(){
+
+    if(window.innerWidth > 768){
+        menu.classList.remove("fixed-pos");
+    }
+
+});
 
 </script>

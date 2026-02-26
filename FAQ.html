@@ -11,6 +11,9 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
@@ -294,7 +297,6 @@ flex-direction:column;
 
 
 
-
 .edu-footer{
 background:#000;
 padding:60px 10%;
@@ -391,10 +393,104 @@ transition:1s;
 
 
 
+/* FOOTER TEXT FIX */
+ .edu-footer{
+background:#111 !important;
+color:#fff;
+}
+
+.footer-box h2,
+.footer-box h3,
+.footer-box p{
+color:#fff !important;
+}
+
+.footer-box ul li a{
+color:#f1f1f1 !important;
+}
+
+.footer-box ul li a:hover{
+color:#ffcc70 !important;
+}
+
+.footer-bottom p{
+color:#ddd !important;
+}  
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PARENT MUST */
+.navbar ul li{
+    position:relative;
+    list-style:none;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:200px;
+    background :blue;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:0.3s ease;
+    z-index:999;
+}
+
+/* SHOW DROPDOWN */
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* LINKS */
+.dropdown-menu li a{
+    display:block;
+    padding:10px;
+    color:#fff;
+}
+
+@media(max-width:768px){
+
+.dropdown-menu{
+    position:static;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    display:none;
+    width:100%;
+}
+
+.dropdown.active .dropdown-menu{
+    display:block;
+}
+
+}
 
 
 
@@ -430,12 +526,14 @@ transition:1s;
 
 <ul class="nav-links" id="nav-links">
 
-<li class="dropdown" id="homeDrop">
-<a href="#">Home</a>
-<ul class="dropdown-menu">
-<li><a href="index.html">Home 1</a></li>
-<li><a href="homepage 2.html">Home 2</a></li>
-</ul>
+<li class="dropdown">
+    <a href="#">Home <i class="fa fa-chevron-down"></i></a>
+
+    <ul class="dropdown-menu">
+        <li><a href="index.html">Home 1</a></li>
+        <li><a href="homepage 2.html">Home 2</a></li>
+        <!-- <li><a href="homepage 3.html">Home 3</a></li> -->
+    </ul>
 </li>
 
 <li><a href="instrudutor.html">Instructors</a></li>
@@ -545,43 +643,43 @@ company tie-ups.
 <p>Empowering Students for a Brighter Future Through Innovation & Excellence.</p>
 
 <div class="social-icons">
-<a href="404.html"><i class="fab fa-facebook-f"></i></a>
-<a href="404.html"><i class="fab fa-instagram"></i></a>
-<a href="404.html"><i class="fab fa-twitter"></i></a>
-<a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+<a href="error.html"><i class="fab fa-facebook-f"></i></a>
+<a href="error.html"><i class="fab fa-instagram"></i></a>
+<a href="error.html"><i class="fab fa-twitter"></i></a>
+<a href="error.html"><i class="fab fa-linkedin-in"></i></a>
 </div>
 </div>
 
 <div class="footer-box">
 <h3>Academics</h3>
 <ul>
-<li><a href="404.html">Undergraduate Programs</a></li>
-<li><a href="404.html">Postgraduate Programs</a></li>
-<li><a href="404.html">Online Courses</a></li>
-<li><a href="404.html">Research</a></li>
-<li><a href="404.html">Scholarships</a></li>
+<li><a href="error.html">Undergraduate Programs</a></li>
+<li><a href="error.html">Postgraduate Programs</a></li>
+<li><a href="error.html">Online Courses</a></li>
+<li><a href="error.html">Research</a></li>
+<li><a href="error.html">Scholarships</a></li>
 </ul>
 </div>
 
 <div class="footer-box">
 <h3>Campus Life</h3>
 <ul>
-<li><a href="404.html">Student Clubs</a></li>
-<li><a href="404.html">Sports Activities</a></li>
-<li><a href="404.html">Hostel Facilities</a></li>
-<li><a href="404.html">Library</a></li>
-<li><a href="404.html">Events</a></li>
+<li><a href="error.html">Student Clubs</a></li>
+<li><a href="error.html">Sports Activities</a></li>
+<li><a href="error.html">Hostel Facilities</a></li>
+<li><a href="error.html">Library</a></li>
+<li><a href="error.html">Events</a></li>
 </ul>
 </div>
 
 <div class="footer-box">
 <h3>Our Campus</h3>
 <ul>
-<li><a href="404.html">About Us</a></li>
-<li><a href="404.html">Gallery</a></li>
-<li><a href="404.html">Admissions</a></li>
-<li><a href="404.html">Departments</a></li>
-<li><a href="404.html">Contact</a></li>
+<li><a href="error.html">About Us</a></li>
+<li><a href="error.html">Gallery</a></li>
+<li><a href="error.html">Admissions</a></li>
+<li><a href="error.html">Departments</a></li>
+<li><a href="error.html">Contact</a></li>
 </ul>
 </div>
 
@@ -603,7 +701,7 @@ company tie-ups.
 
 
 
-<script>const toggle = document.getElementById("menu-toggle");
+<!-- <script>const toggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav-links");
 const homeDrop = document.getElementById("homeDrop");
 
@@ -616,8 +714,31 @@ if(window.innerWidth <= 768){
 e.preventDefault();
 this.classList.toggle("active");
 }
+} -->
+
+
+<script>
+
+const footerBox=document.querySelectorAll(".footer-box");
+
+function showFooter(){
+
+footerBox.forEach(box=>{
+
+let pos=box.getBoundingClientRect().top;
+let screen=window.innerHeight;
+
+if(pos < screen-50){
+box.style.opacity="1";
+box.style.transform="translateY(0)";
 }
 
+});
+
+}
+
+window.addEventListener("scroll",showFooter);
+window.addEventListener("load",showFooter);
 
 
 
@@ -686,3 +807,15 @@ box.style.transform="translateY(0px)";
 
 
 </script>
+ <script>
+document.querySelectorAll(".dropdown > a").forEach(menu=>{
+    menu.addEventListener("click", function(e){
+
+        if(window.innerWidth <= 768){
+            e.preventDefault();
+            this.parentElement.classList.toggle("active");
+        }
+
+    });
+});
+</script> 

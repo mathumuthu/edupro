@@ -335,6 +335,99 @@ padding:5px 10px;
 display:block;
 }
 
+
+
+/* DROPDOWN */
+ .dropdown-menu{
+display:none;
+position:absolute;
+background:#fff;
+top:40px;
+padding:10px;
+border-radius:5px;
+animation:fadeDrop .5s ease;
+}
+
+.dropdown-menu li a{
+color:#800000;
+display:block;
+padding:5px 10px;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:calc(100% + 5px); /* 👈 இதுதான் main fix */
+     left:0;
+    background:#fff;
+    min-width:180px;
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s ease;
+    z-index:999;
+} 
+
+
+
+ 
+.dropdown::after{
+    content:"";
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    height:10px;   /* gap bridge */
+ }
+
+
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* HAMBURGER */
 .menu-btn{
 display:none;
@@ -744,7 +837,98 @@ font-size:14px;
 color:#333;
 }
 
-</style>
+
+
+
+
+
+
+
+
+
+/* MOBILE VIEW FULL FIX */
+@media(max-width:768px){
+
+body,html{
+margin:0;
+padding:0;
+overflow-x:hidden;
+}
+
+/* HEADER FIX */
+.stackly-header{
+padding:8px 15px;
+}
+
+.header-container{
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+}
+
+/* LOGO FIX */
+.logo-area img{
+width:35px;
+}
+
+/* NAV MENU FIX */
+.nav-menu{
+top:60px;
+width:100%;
+height:auto;
+background:#fff;
+padding:10px 0;
+}
+
+/* HERO GAP REMOVE */
+.hero-slider{
+margin-top:0;
+padding-top:0;
+height:75vh;
+}
+
+/* ALL SECTION GAP REMOVE */
+section{
+padding-left:15px !important;
+padding-right:15px !important;
+margin-top:0;
+}
+
+/* TEXT RESPONSIVE */
+h1{
+font-size:24px !important;
+}
+
+h2{
+font-size:20px !important;
+}
+
+p{
+font-size:14px !important;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -850,5 +1034,54 @@ circle.style.strokeDashoffset = offset;
 },300);
 
 });
+
+</script>
+<script>
+
+const dropdown = document.querySelector(".dropdown");
+const menu = document.querySelector(".dropdown-menu");
+
+dropdown.addEventListener("mouseenter", function(){
+
+    if(window.innerWidth > 768){
+
+        if(!menu.classList.contains("fixed-pos")){
+            menu.style.top = "80%";   // light down
+            menu.classList.add("fixed-pos");
+        }
+
+    }
+
+});
+
+dropdown.addEventListener("mouseleave", function(){
+
+    if(window.innerWidth > 768){
+        menu.classList.remove("fixed-pos");
+    }
+
+});
+
+</script>
+<script>
+
+function mobileViewFix(){
+
+if(window.innerWidth <= 768){
+
+document.body.style.overflowX="hidden";
+
+document.querySelectorAll("section").forEach(sec=>{
+sec.style.marginTop="0px";
+});
+
+document.querySelector(".hero-slider").style.marginTop="0px";
+
+}
+
+}
+
+window.onload=mobileViewFix;
+window.onresize=mobileViewFix;
 
 </script>
