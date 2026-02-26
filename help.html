@@ -642,7 +642,7 @@ Soft skill training & internship support.
 <li><a href="error.html">Sports Activities</a></li>
 <li><a href="error.html">Hostel Facilities</a></li>
 <li><a href="error.html">Library</a></li>
-<li><a href="404.html">Events</a></li>
+<li><a href="error.html">Events</a></li>
 </ul>
 </div>
 
@@ -777,4 +777,22 @@ document.querySelectorAll(".dropdown > a").forEach(menu=>{
 
     });
 });
+</script><script>
+
+// MOBILE HAMBURGER MENU FIX
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+
+toggle.addEventListener("click",function(e){
+e.stopPropagation();
+nav.classList.toggle("active");
+});
+
+// OUTSIDE CLICK CLOSE MENU
+document.addEventListener("click",function(e){
+if(!nav.contains(e.target) && !toggle.contains(e.target)){
+nav.classList.remove("active");
+}
+});
+
 </script>
