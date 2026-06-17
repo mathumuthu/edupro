@@ -1,148 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EduPro - 404 Error</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-<style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f7fa;
+            padding: 20px;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
 
-body{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#004e92,#000428);
-overflow:hidden;
-}
+        .error-code {
+            font-size: 100px;
+            font-weight: 700;
+            color: #2563eb;
+            line-height: 1;
+        }
 
-/* FLOATING SHAPES */
+        .title {
+            margin-top: 15px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #222;
+        }
 
-.shape{
-position:absolute;
-background:#fff;
-opacity:0.1;
-border-radius:50%;
-animation:float 6s infinite linear;
-}
+        .description {
+            margin-top: 12px;
+            color: #666;
+            line-height: 1.6;
+            font-size: 16px;
+        }
 
-.shape:nth-child(1){
-width:120px;
-height:120px;
-top:10%;
-left:20%;
-}
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-.shape:nth-child(2){
-width:80px;
-height:80px;
-top:60%;
-left:70%;
-animation-duration:9s;
-}
+        .btn {
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
 
-.shape:nth-child(3){
-width:150px;
-height:150px;
-top:70%;
-left:10%;
-animation-duration:12s;
-}
+        .btn-home {
+            background: #2563eb;
+            color: #fff;
+        }
 
-@keyframes float{
-0%{transform:translateY(0);}
-100%{transform:translateY(-1000px);}
-}
+        .btn-home:hover {
+            background: #1d4ed8;
+        }
 
-/* CONTENT */
+        .btn-back {
+            background: #e5e7eb;
+            color: #333;
+        }
 
-.error-box{
-text-align:center;
-color:#fff;
-padding:20px;
-z-index:2;
-}
+        .btn-back:hover {
+            background: #d1d5db;
+        }
 
-.error-box h1{
-font-size:120px;
-letter-spacing:5px;
-}
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
 
-.error-box h2{
-font-size:30px;
-margin-bottom:10px;
-}
+            .error-code {
+                font-size: 72px;
+            }
 
-.error-box p{
-margin-bottom:25px;
-}
+            .title {
+                font-size: 24px;
+            }
 
-.btn{
-background:#fff;
-color:#004e92;
-padding:12px 25px;
-border:none;
-border-radius:30px;
-cursor:pointer;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
+            .button-group {
+                flex-direction: column;
+            }
 
-.btn:hover{
-background:#00c6ff;
-color:#fff;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.error-box h1{
-font-size:70px;
-}
-
-.error-box h2{
-font-size:22px;
-}
-
-}
-
-</style>
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="shape"></div>
-<div class="shape"></div>
-<div class="shape"></div>
+    <div class="container">
+        <div class="error-code">404</div>
 
-<div class="error-box" data-aos="zoom-in">
+        <h1 class="title">Page Not Found</h1>
 
-<h1>404</h1>
-<h2>Oops! Page Not Found</h2>
-<p>The page you are looking for might be removed or temporarily unavailable.</p>
+        <p class="description">
+            Sorry, the page you are looking for doesn't exist,
+            has been moved, or is temporarily unavailable.
+        </p>
 
-<a href="homepage 2.html" class="btn">Back To Home</a>
+        <div class="button-group">
+            <button class="btn btn-back" onclick="history.back()">
+                ← Go Back
+            </button>
 
-</div>
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-AOS.init({
-duration:1000,
-});
-</script>
+            <a href="/" class="btn btn-home">
+                🏠 Back Home
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
