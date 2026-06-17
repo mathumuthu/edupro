@@ -1,138 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
 
-<title>404 - Page Not Found</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f7fa;
+            padding: 20px;
+        }
 
-<style>
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        .error-code {
+            font-size: 100px;
+            font-weight: 700;
+            color: #2563eb;
+            line-height: 1;
+        }
 
-body{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(-45deg,#a5b4fc,#60a5fa,#4ade80,#c4b5fd);
-background-size:400% 400%;
-animation:bgMove 10s infinite alternate;
-}
+        .title {
+            margin-top: 15px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #222;
+        }
 
-/* BACKGROUND ANIMATION */
-@keyframes bgMove{
-0%{background-position:left;}
-100%{background-position:right;}
-}
+        .description {
+            margin-top: 12px;
+            color: #666;
+            line-height: 1.6;
+            font-size: 16px;
+        }
 
-/* GLASS BOX */
-.error-box{
-background:rgba(255,255,255,0.2);
-padding:60px;
-border-radius:30px;
-text-align:center;
-backdrop-filter:blur(10px);
-box-shadow:0 10px 40px rgba(0,0,0,0.2);
-animation:fadeUp 2s ease;
-}
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-/* 404 TEXT */
-.error-box h1{
-font-size:100px;
-color:#4ade80;
-animation:blink 1s infinite alternate;
-}
+        .btn {
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
 
-/* BLINK ANIMATION */
-@keyframes blink{
-from{opacity:1;}
-to{opacity:0.5;}
-}
+        .btn-home {
+            background: #2563eb;
+            color: #fff;
+        }
 
-.error-box h2{
-margin:10px 0;
-}
+        .btn-home:hover {
+            background: #1d4ed8;
+        }
 
-.error-box p{
-margin-bottom:20px;
-color:#333;
-}
+        .btn-back {
+            background: #e5e7eb;
+            color: #333;
+        }
 
-/* BUTTON */
-.home-btn{
-padding:12px 30px;
-background:#4ade80;
-border:none;
-color:#000;
-border-radius:30px;
-cursor:pointer;
-transition:0.3s;
-animation:btnGlow 2s infinite;
-}
+        .btn-back:hover {
+            background: #d1d5db;
+        }
 
-@keyframes btnGlow{
-0%{box-shadow:0 0 10px #4ade80;}
-50%{box-shadow:0 0 25px #4ade80;}
-100%{box-shadow:0 0 10px #4ade80;}
-}
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
 
-.home-btn:hover{
-transform:scale(1.1);
-background:#22c55e;
-}
+            .error-code {
+                font-size: 72px;
+            }
 
-/* FLOATING */
-@keyframes fadeUp{
-from{
-transform:translateY(50px);
-opacity:0;
-}
-to{
-transform:translateY(0);
-opacity:1;
-}
-}
+            .title {
+                font-size: 24px;
+            }
 
-/* MOBILE */
-@media(max-width:768px){
+            .button-group {
+                flex-direction: column;
+            }
 
-.error-box{
-padding:30px;
-}
-
-.error-box h1{
-font-size:60px;
-}
-
-}
-
-</style>
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="error-box">
+    <div class="container">
+        <div class="error-code">404</div>
 
-<h1>404</h1>
-<h2>Oops! Page Not Found</h2>
+        <h1 class="title">Page Not Found</h1>
 
-<p>
-The page you are looking for might have been removed or is temporarily unavailable.
-</p>
+        <p class="description">
+            Sorry, the page you are looking for doesn't exist,
+            has been moved, or is temporarily unavailable.
+        </p>
 
-<a href="index.html">
-<button class="home-btn">Back to Home</button>
-</a>
+        <div class="button-group">
+            <button class="btn btn-back" onclick="history.back()">
+                ← Go Back
+            </button>
 
-</div>
+            <a href="/" class="btn btn-home">
+                🏠 Back Home
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
