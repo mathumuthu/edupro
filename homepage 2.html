@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<header class="main-header">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+<header class="main-header">
 <nav class="navbar">
 
 <div class="logo">
-<img src="ChatGPT Image Feb 23, 2026, 11_38_27 AM.webp" width="50px " height="50px">
-<a>STACKLY
+<img src="ChatGPT Image Feb 24, 2026, 07_21_33 AM.webp">
+<span>STACKLY</span>
 </div>
 
 <div class="menu-toggle" id="menu-toggle">
@@ -15,36 +16,28 @@
 <ul class="nav-links" id="nav-links">
 
 <li class="dropdown">
-    <a href="homepage 2.html">Home <i class="fa fa-chevron-down"></i></a>
+    <a href="">Home <i class="fa fa-chevron-down"></i></a>
 
     <ul class="dropdown-menu">
         <li><a href="index.html">Home 1</a></li>
         <li><a href="homepage 2.html">Home 2</a></li>
-        <!-- <li><a href="homepage 3.html">Home 3</a></li> -->
+        <!-- <li><a href="#">Home 3</a></li> -->
     </ul>
 </li>
 
 <li><a href="instrudutor.html">Instructors</a></li>
 <!-- <li><a href="events.html">Events</a></li> -->
 <li><a href="FAQ.html">FAQ</a></li>
-<!-- <li><a href="about.html">About Us</a></li> -->
 <li><a href="help.html">Help Center</a></li>
- <li><a href="contact.html">Contact</a></li> 
+<li><a href="contact.html">Contact</a></li>
 
 </ul>
 
-<div class="nav-icons">
-
-<!-- <i class="fa fa-search"></i> -->
-
-<!-- <button class="login-btn">Dasbhord</button> -->
-<a href="login.html"><button class="login-btn">Login</button></a>
-
-</div>
+<a href="login.html" class="login-btn">Login</a>
 
 </nav>
-
 </header>
+
 
 <!-- <section class="campus-life">
   <div class="life-container">
@@ -485,6 +478,7 @@ border-radius:10px;
 position:sticky;
 top:0;
 z-index:999;
+width:100%;
 }
 
 .navbar{
@@ -492,7 +486,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 5%;
-background:#1e3a5f;
+background:#27476e;
 color:#fff;
 }
 
@@ -511,25 +505,92 @@ margin-right:10px;
 .nav-links{
 display:flex;
 list-style:none;
-gap:25px;
+gap:30px;
+align-items:center;
 }
 
 .nav-links li{
-cursor:pointer;
 position:relative;
 }
-
-
 
 .nav-links li a{
 text-decoration:none;
 color:#fff;
-display:block;
+}
+
+/* DROPDOWN */
+.dropdown-menu{
+display:none;
+position:absolute;
+top:35px;
+background:#fff;
+list-style:none;
+padding:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
 }
 
 .dropdown-menu li a{
 color:#000;
+padding:5px 10px;
+display:block;
 }
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+/* LOGIN */
+.login-btn{
+background:#4ade80;
+padding:8px 20px;
+text-decoration:none;
+color:#fff;
+border-radius:3px;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+display:none;
+font-size:25px;
+cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:-100%;
+width:100%;
+background:#27476e;
+flex-direction:column;
+padding:20px;
+transition:.4s;
+}
+
+.nav-links.active{
+left:0;
+}
+
+.dropdown-menu{
+position:static;
+display:none;
+}
+
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+}
+
+
+
+
 
 
 .active{

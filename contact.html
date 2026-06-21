@@ -20,6 +20,9 @@ background:linear-gradient(120deg,#4f46e5,#06b6d4);
 
 /* ===== HEADER ===== */
 
+
+/* ===== HEADER ===== */
+
 .main-header{
 position:sticky;
 top:0;
@@ -133,6 +136,56 @@ display:block;
 }
 
 }
+
+/* LOGIN */
+.login-btn{
+background:#4ade80;
+padding:8px 20px;
+text-decoration:none;
+color:#fff;
+border-radius:3px;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+display:none;
+font-size:25px;
+cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:-100%;
+width:100%;
+background:#27476e;
+flex-direction:column;
+padding:20px;
+transition:.4s;
+}
+
+.nav-links.active{
+left:0;
+}
+
+.dropdown-menu{
+position:static;
+display:none;
+}
+
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+}
+
 
 /* ===== CONTACT WRAPPER ===== */
 
@@ -418,7 +471,7 @@ transition:1s;
 <nav class="navbar">
 
 <div class="logo">
- <a href="index.html"><img src="ChatGPT Image Feb 24, 2026, 07_21_33 AM.webp"></a>
+<img src="ChatGPT Image Feb 24, 2026, 07_21_33 AM.webp">
 <span>STACKLY</span>
 </div>
 
@@ -429,12 +482,12 @@ transition:1s;
 <ul class="nav-links" id="nav-links">
 
 <li class="dropdown">
-    <a href="#">Home <i class="fa fa-chevron-down"></i></a>
+    <a href="">Home <i class="fa fa-chevron-down"></i></a>
 
     <ul class="dropdown-menu">
         <li><a href="index.html">Home 1</a></li>
         <li><a href="homepage 2.html">Home 2</a></li>
-        <!-- <li><a href="homepage 3.html">Home 3</a></li> -->
+        <!-- <li><a href="#">Home 3</a></li> -->
     </ul>
 </li>
 
@@ -450,6 +503,7 @@ transition:1s;
 
 </nav>
 </header>
+
 
 <div class="contact-wrapper">
 
